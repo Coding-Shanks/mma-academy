@@ -1,0 +1,163 @@
+/* Enhanced custom styles for MMA Academy */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a202c, #2d3748);
+    scroll-behavior: smooth;
+}
+
+nav {
+    backdrop-filter: blur(10px);
+    background: rgba(31, 41, 55, 0.9);
+    transition: all 0.3s ease;
+}
+
+nav a {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #e53e3e;
+    transition: width 0.3s ease;
+}
+
+.hero-overlay {
+    position: relative;
+    top: 200px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    padding: 10px, 20px;
+
+}
+
+section#home {
+    position: relative;
+    overflow: hidden;
+}
+
+section#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    z-index: 0;
+}
+
+button,
+a.bg-red-600 {
+    box-shadow: 0 5px 15px rgba(229, 62, 62, 0.4);
+    transition: all 0.3s ease;
+}
+
+button:hover,
+a.bg-red-600:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 62, 62, 0.6);
+}
+
+.card {
+    background: #2d3748;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+#threejs-container {
+    border: 2px solid #e53e3e;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(229, 62, 62, 0.3);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    border: 1px solid #4a5568;
+}
+
+table th {
+    background: #2d3748;
+    font-weight: bold;
+}
+
+table tr:hover {
+    background: #3a4b5c;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        space-y-2;
+    }
+
+    .grid-cols-3,
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+
+    section#home h1 {
+        font-size: 2.5rem;
+    }
+
+    #threejs-container {
+        height: 60vw;
+    }
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMA & UFC Training Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-800 shadow-lg z-20">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-red-600">MMA Academy</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:text-red-600 transition">Home</a></li>
+                <li><a href="programs.html" class="hover:text-red-600 transition">Programs</a></li>
+                <li><a href="resources.html" class="hover:text-red-600 transition">Resources</a></li>
+                <li><a href="about.html" class="hover:text-red-600 transition">About</a></li>
+                <li><a href="testimonials.html" class="hover:text-red-600 transition">Testimonials</a></li>
+                <li><a href="schedule.html" class="hover:text-red-600 transition">Schedule</a></li>
+                <li><a href="blog.php" class="hover:text-red-600 transition">Blog</a></li>
+                <li><a href="contact.php" class="hover:text-red-600 transition">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home"
+        class="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-cover bg-center relative"
+        style="background-image: url('https://static0.givemesportimages.com/wordpress/wp-content/uploads/2024/06/ufc_best-american-fighters.jpg')">
+        <div class="bg-black bg-opacity-70 p-12 rounded-lg hero-overlay z-10">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">Train Like a Champion</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl animate-fade-in">Master MMA and UFC with world-class training
+                programs designed for fighters of all levels, from beginners to pros.</p>
+            <a href="programs.html"
+                class="bg-red-600 text-white px-8 py-4 rounded-lg hover:bg-red-700 transition text-lg font-semibold animate-pulse">Explore
+                Programs</a>
+        </div>
+
+    </section>
+
+    <!-- Featured Techniques Section -->
+    <section id="techniques" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 animate-fade-in">Featured Techniques</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg card">
+                    <h3 class="text-2xl font-semibold mb-4">Jab-Cross Combo</h3>
+                    <div class="relative w-full h-64">
+                        <iframe class="w-full h-full rounded-lg" src="videos/1.mp4" title="Jab-Cross Tutorial"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <p class="mt-4">Master the fundamental striking combo used by top UFC fighters.</p>
+                    <a href="resources.html" class="text-red-600 hover:underline mt-2 inline-block">Learn More</a>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg card">
+                    <h3 class="text-2xl font-semibold mb-4">Rear-Naked Choke</h3>
+                    <div class="relative w-full h-64">
+                        <iframe class="w-full h-full rounded-lg" src="videos/2.mp4" title="Rear-Naked Choke Tutorial"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <p class="mt-4">Learn the classic grappling submission for dominating opponents.</p>
+                    <a href="resources.html" class="text-red-600 hover:underline mt-2 inline-block">Learn More</a>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg card">
+                    <h3 class="text-2xl font-semibold mb-4">Spinning Back Kick</h3>
+                    <div class="relative w-full h-64">
+                        <iframe class="w-full h-full rounded-lg" src="videos/3.mp4" title="Rear-Naked Choke Tutorial"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <p class="mt-4">Add this powerful kick to your arsenal for knockout potential.</p>
+                    <a href="resources.html" class="text-red-600 hover:underline mt-2 inline-block">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Fighters Section -->
+    <section id="fighters" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 animate-fade-in">Meet Our Fighters</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg card text-center">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNDhkMTg1ODctNzVkZi00YzM1LWI3ZDUtZTljMmEzN2VhZDA3XkEyXkFqcGc@._V1_.jpg"
+                        alt="Fighter 1" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-2">James "The Beast" Carter</h3>
+                    <p class="text-gray-300 mb-4">UFC Veteran, Middleweight Champion</p>
+                    <p>James brings 15 years of experience, specializing in striking and conditioning.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg card text-center">
+                    <img src="https://www.elitesports.com/cdn/shop/articles/a-list-of-interesting-gordon-ryan-facts_61175bbe-92c8-4c34-8606-fcfe75aa611b.jpg?v=1741631375&width=1200"
+                        alt="Fighter 2" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-2">Gordon Ryan "The King"</h3>
+                    <p class="text-gray-300 mb-4">BJJ Black Belt, Grappling Expert</p>
+                    <p> Ryan earned his black belt under Garry Tonon. </p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg card text-center">
+                    <img src="https://images.daznservices.com/di/library/DAZN_News/b0/44/jon-jonesfeb2020_4sdsze92cqnn1g4xjmrllfbl8.jpg?t=-1689499114"
+                        alt="Fighter 3" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h3 class="text-2xl font-semibold mb-2">Jone "Bones" Jones's</h3>
+                    <p class="text-gray-300 mb-4">SAmerican professional mixed martial artist. </p>
+                    <p>Heavyweight division of the Ultimate Fighting Championship (UFC).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-12 animate-fade-in">Why Choose MMA Academy?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-700 rounded-lg shadow-lg card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcXReoqeYBT9ZAbuVpZ5Y_xIp5F1ouoG3-uA&s"
+                        alt="Expert Coaches" class="w-24 h-24 mx-auto rounded-full mb-4">
+                    <h3 class="text-2xl font-semibold mb-4">Expert Coaches</h3>
+                    <p>Train with UFC veterans and certified trainers with decades of experience.</p>
+                </div>
+                <div class="p-6 bg-gray-700 rounded-lg shadow-lg card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZIajE54PG0g_sH_bM9MqlFROp1GvV_fvrHg&s"
+                        alt="Tailored Programs" class="w-24 h-24 mx-auto rounded-full mb-4">
+                    <h3 class="text-2xl font-semibold mb-4">Tailored Programs</h3>
+                    <p>Customized training plans for beginners, intermediates, and pros.</p>
+                </div>
+                <div class="p-6 bg-gray-700 rounded-lg shadow-lg card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKi6-LLkbQUCm3W1dslD8sLeIWhSgfZB63WQ&s"
+                        alt="Elite Facilities" class="w-24 h-24 mx-auto rounded-full mb-4">
+                    <h3 class="text-2xl font-semibold mb-4">Elite Facilities</h3>
+                    <p>Access state-of-the-art equipment and training environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-red-600 text-white py-20">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6 animate-fade-in">Ready to Become a Champion?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join MMA Academy today and start your journey to greatness with
+                world-class training and support.</p>
+            <a href="contact.php"
+                class="bg-white text-red-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition text-lg animate-pulse">Get
+                Started Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto text-center">
+            <p class="mb-4 text-lg">Email: info@mmaacademy.com</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-red-600 hover:text-red-700 transition text-lg" aria-label="Twitter">Twitter</a>
+                <a href="#" class="text-red-600 hover:text-red-700 transition text-lg"
+                    aria-label="Instagram">Instagram</a>
+                <a href="#" class="text-red-600 hover:text-red-700 transition text-lg"
+                    aria-label="Facebook">Facebook</a>
+            </div>
+            <p class="mt-4">© 2025 MMA Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
