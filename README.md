@@ -77,7 +77,7 @@ A responsive, dynamic website for an MMA and UFC training academy, built with **
    ```bash
    git clone https://github.com/yourusername/mma-academy.git
    cd mma-academy
-````
+   ```
 
 2. **Set Up the Database**
 
@@ -220,18 +220,10 @@ See the [LICENSE](LICENSE) file for details.
 ## 📬 Contact
 
 * **Email**: [info@mmaacademy.com](mailto:info@mmaacademy.com)
-* **GitHub Issues**: [Open an issue](https://github.com/yourusername/mma-academy/issues)
+* **GitHub Issues**: [Open an issue](https://github.com/Coding-Shanks/mma-academy/issues)
 * **Social**: [Twitter](#) | [Instagram](#) | [Facebook](#)
 
 ---
 
 ⭐ *Star this repo if you find it useful!*
 📹 *Check out the YouTube tutorial for a step-by-step build!*
-
-```
-
----
-
-Let me know if you’d like this saved as a `.md` file or need help customizing any section!
-```
-
