@@ -1,198 +1,237 @@
-MMA & UFC Training Website 🥊💻
 
-A responsive, dynamic website for an MMA and UFC training academy, built with HTML, CSS (Tailwind CSS), JavaScript (Three.js), PHP, and MySQL. Features include a blog with image uploads, individual post pages, a contact form, and interactive animations. Perfect for web developers and MMA enthusiasts looking to create a professional training platform.
-📖 Table of Contents
+# 🥊 MMA & UFC Training Website
 
-Features
-Technologies
-Screenshots
-Setup Instructions
-Usage
-Project Structure
-Contributing
-License
-Contact
+A responsive, dynamic website for an MMA and UFC training academy, built with **HTML**, **Tailwind CSS**, **JavaScript (Three.js)**, **PHP**, and **MySQL**. The platform includes a dynamic blog, image uploads, a contact form, an admin panel, and 3D animations — ideal for developers and MMA enthusiasts looking to create a professional training platform.
 
-✨ Features
+---
 
-Responsive Design: Mobile-friendly layout using Tailwind CSS.
-Dynamic Blog: Create and display blog posts with image uploads, stored in MySQL.
-Individual Post Pages: Enhanced single-post pages with full-size images, comments, related posts, and social sharing.
-Contact Form: Submit inquiries stored in the database with validation.
-Interactive Animations: Three.js torus knot animation in the hero section.
-Admin Panel: Upload blog posts and images via a secure admin interface.
-SEO Optimized: Structured for search engine visibility.
+## 📖 Table of Contents
 
-🛠 Technologies
+- [✨ Features](#-features)
+- [🛠 Technologies](#-technologies)
+- [📸 Screenshots](#-screenshots)
+- [⚙️ Setup Instructions](#️-setup-instructions)
+- [🚀 Usage](#-usage)
+- [📂 Project Structure](#-project-structure)
+- [🤝 Contributing](#-contributing)
+- [📜 License](#-license)
+- [📬 Contact](#-contact)
 
-Frontend: HTML, Tailwind CSS, JavaScript, Three.js
-Backend: PHP, MySQL
-Dependencies:
-Tailwind CSS (CDN)
-Three.js (CDN)
+---
 
+## ✨ Features
 
-Tools: Apache/Nginx, MySQL, Git
+- **Responsive Design**: Mobile-friendly layout using Tailwind CSS.
+- **Dynamic Blog**: Post blogs with image uploads stored in MySQL.
+- **Individual Post Pages**: Full-size images, comments, related posts, and social sharing.
+- **Contact Form**: Submits and stores inquiries in the database with validation.
+- **Interactive Animations**: 3D torus knot using Three.js in the hero section.
+- **Admin Panel**: Secure interface to upload blog posts and images.
+- **SEO Optimized**: Clean, structured layout for search engine visibility.
 
-📸 Screenshots
+---
 
+## 🛠 Technologies
 
+**Frontend**  
+- HTML  
+- Tailwind CSS (CDN)  
+- JavaScript (Three.js via CDN)
 
-Homepage
-Blog Page
+**Backend**  
+- PHP  
+- MySQL
 
+**Tools**  
+- Apache/Nginx  
+- Git  
+- MySQL Workbench  
+- Composer (optional for PHP dependency management)
 
+---
 
+## 📸 Screenshots
 
+> Screenshots are located in the `/screenshots/` folder.
 
+- Homepage  
+- Blog Page  
+- Single Post  
+- Admin Upload Panel
 
+---
 
+## ⚙️ Setup Instructions
 
+### ✅ Prerequisites
 
+- Web Server: Apache or Nginx with PHP 7.4+
+- MySQL or MariaDB
+- Git
+- Composer (optional)
+- Modern Browser (Chrome, Firefox, etc.)
 
-Single Post
-Admin Upload
+### 📦 Installation Steps
 
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/yourusername/mma-academy.git
+   cd mma-academy
+````
 
+2. **Set Up the Database**
 
+   * Create a MySQL database named `mma_academy`.
+   * Import the provided schema:
 
+     ```bash
+     mysql -u your_username -p mma_academy < database.sql
+     ```
 
+3. **Configure `config.php`**
+   Update the database credentials:
 
+   ```php
+   <?php
+   $servername = "localhost";
+   $username = "your_username";
+   $password = "your_password";
+   $dbname = "mma_academy";
 
-⚙️ Setup Instructions
-Prerequisites
+   try {
+       $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   } catch(PDOException $e) {
+       die("Connection failed: " . $e->getMessage());
+   }
+   ?>
+   ```
 
-Web Server: Apache or Nginx with PHP (7.4+)
-Database: MySQL or MariaDB
-Tools: Git, Composer (optional for PHP dependencies)
-Browser: Modern browser (Chrome, Firefox, etc.)
+4. **Web Server Setup**
 
-Steps
+   * Place the project folder in your server root (`/var/www/html/` for Apache).
+   * Ensure permissions for image uploads:
 
-Clone the Repository:
-git clone https://github.com/Coding-Shanks/mma-academy.git
-cd mma-academy
+     ```bash
+     chmod 755 images/
+     chmod 644 images/*
+     ```
 
+5. **Add Images**
+   Place the following images in the `images/` folder:
 
-Set Up the Database:
+   * Site images: `hero-bg.jpg`, `fighter1.jpg`, `coach.jpg`, etc.
+   * Blog images: `striking-techniques.jpg`, `nutrition-tips.jpg`, `blog-placeholder.jpg`
+   * Optimize all images to be under 500KB.
 
-Create a MySQL database named mma_academy.
-Import the database.sql file:mysql -u your_username -p mma_academy < database.sql
+6. **Test the Website**
 
+   * Start your server:
 
-Update config.php with your database credentials:<?php
-$servername = "localhost";
-$username = "your_username";
-$password = "your_password";
-$dbname = "mma_academy";
+     ```bash
+     sudo systemctl start apache2
+     ```
+   * Visit in browser:
+     `http://localhost/mma-academy/index.html`
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
-}
-?>
+   Verify:
 
+   * Homepage animation (Three.js)
+   * Blog previews (`blog.php`)
+   * Individual blog pages (`single_post.php?id=1`)
+   * Contact form (`contact.php`)
+   * Admin panel (`admin_upload.php`)
 
+---
 
+## 🚀 Usage
 
-Configure the Web Server:
+### 🌐 Browsing
 
-Place the mma-academy/ folder in your web server's root (e.g., /var/www/html/ for Apache).
-Ensure the images/ folder is writable:chmod 755 images/
-chmod 644 images/*
+* Navigate from `index.html` to all pages.
+* View blog posts via `blog.php`.
+* Submit inquiries via `contact.php`.
 
+### 🔐 Admin Tasks
 
+* Use `admin_upload.php` to post blogs and upload images.
+* Add basic authentication for production security.
 
+### 🗃 Database Overview
 
-Add Images:
+* `blog_posts` – stores blog content and image paths
+* `comments` – stores comments for individual posts
+* `inquiries` – stores submitted messages from contact form
 
-Ensure the images/ folder contains:
-hero-bg.jpg, fighter1.jpg, fighter2.jpg, fighter3.jpg, coach.jpg, training.jpg, gym.jpg, fallback.jpg
-Blog images: striking-techniques.jpg, nutrition-tips.jpg, ground-game.jpg, blog-placeholder.jpg
+---
 
+## 📂 Project Structure
 
-Optimize images (<500KB) for performance.
-
-
-Test the Website:
-
-Start your web server (e.g., Apache: sudo systemctl start apache2).
-Access http://localhost/mma-academy/index.html in a browser.
-Verify features:
-Homepage with Three.js animation
-Blog page (blog.php) with post previews
-Single post page (single_post.php?id=1) with full-size images and comments
-Contact form (contact.php) submission
-Admin blog upload (admin_upload.php)
-
-
-
-
-
-🚀 Usage
-
-Browse the Website:
-Start at index.html for the homepage.
-Navigate to blog.php for blog posts, click "Read More" for individual posts.
-Use contact.php to submit inquiries.
-
-
-Admin Tasks:
-Access admin_upload.php to upload blog posts and images (add authentication in production).
-Images are saved to images/ and paths stored in blog_posts.
-
-
-Database Management:
-View inquiries in the inquiries table.
-Manage blog posts in the blog_posts table.
-Check comments in the comments table.
-
-
-
-📂 Project Structure
+```
 mma-academy/
 ├── index.html              # Homepage
 ├── programs.html           # Training programs
 ├── resources.html          # Resources page
 ├── about.html              # About page
 ├── contact.php             # Contact form
-├── blog.php                # Blog list with previews
-├── single_post.php         # Individual blog post page
-├── testimonials.html       # Testimonials page
-├── schedule.html           # Schedule page
-├── admin_upload.php        # Admin blog post upload
+├── blog.php                # Blog listing
+├── single_post.php         # Full blog post page
+├── testimonials.html       # Testimonials
+├── schedule.html           # Class schedule
+├── admin_upload.php        # Admin upload panel
 ├── submit_contact.php      # Contact form handler
-├── styles.css              # Custom CSS
-├── script.js               # JavaScript (Three.js, smooth scrolling)
-├── config.php              # Database configuration
-├── database.sql            # MySQL schema
-├── images/                 # Images for website and blogs
-└── screenshots/            # Screenshots for README
+├── styles.css              # Custom styles
+├── script.js               # JS (Three.js, smooth scroll)
+├── config.php              # Database connection
+├── database.sql            # DB schema
+├── images/                 # All images
+└── screenshots/            # UI screenshots
+```
 
-🤝 Contributing
-Contributions are welcome! Follow these steps:
+---
 
-Fork the repository.
-Create a branch: git checkout -b feature/your-feature.
-Commit changes: git commit -m "Add your feature".
-Push to the branch: git push origin feature/your-feature.
-Open a pull request with a clear description.
+## 🤝 Contributing
 
-Ideas for Contributions
+Contributions are welcome!
+To contribute:
 
-Add a comment submission form for single_post.php.
-Implement user authentication for admin_upload.php.
-Enhance Three.js animations on the homepage.
-Add search functionality to blog.php.
+1. Fork the repository
+2. Create a branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "Add new feature"`
+4. Push the branch: `git push origin feature/your-feature`
+5. Open a pull request
 
-📜 License
-This project is licensed under the MIT License. See the LICENSE file for details.
-📬 Contact
+### Contribution Ideas
 
-GitHub Issues: Open an issue
-Social: Twitter | Instagram | Facebook
+* Add comment submission to `single_post.php`
+* Secure `admin_upload.php` with authentication
+* Improve 3D visuals on homepage
+* Add search functionality to `blog.php`
 
+---
 
-⭐ Star this repository if you find it helpful!📹 Check out the YouTube tutorial for a step-by-step guide to building this project!
+## 📜 License
+
+This project is licensed under the **MIT License**.
+See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📬 Contact
+
+* **Email**: [info@mmaacademy.com](mailto:info@mmaacademy.com)
+* **GitHub Issues**: [Open an issue](https://github.com/yourusername/mma-academy/issues)
+* **Social**: [Twitter](#) | [Instagram](#) | [Facebook](#)
+
+---
+
+⭐ *Star this repo if you find it useful!*
+📹 *Check out the YouTube tutorial for a step-by-step build!*
+
+```
+
+---
+
+Let me know if you’d like this saved as a `.md` file or need help customizing any section!
+```
+
